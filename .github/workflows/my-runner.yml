@@ -8,8 +8,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Install tree
-        run: |
-          yum check-update
-          sudo yum install -y tree
+        run: sudo yum install -y tree
       - name: Execute tree
         run: tree -L 2 /
