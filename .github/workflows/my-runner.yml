@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Install tree
         run: |
-          yum update
-          yum install -y tree
+          sudo yum check-update
+          sudo yum install -y tree
       - name: Execute tree
-        run: time tree | tree -L 2 /
+        run: tree -L 2 /
