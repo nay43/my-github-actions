@@ -1,0 +1,15 @@
+name: Verifiy file
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    name: ${{ vars.JOB_NAME}}
+    runs-on: ubuntu-latest
+    if: ${{ vars.WF_EXEC == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+        [[ -f ${{ var.FILE_TO_CHECK }} ]] || (echo "${{ vars.FILE_TO_CHECK }} file needs to be added to ${{ github.repository }} !" && exit 1)
