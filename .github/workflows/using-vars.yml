@@ -12,5 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo "Hello world"
-          echo "Hello world2"
+          echo "File to check is: " ${{ vars.FILE_TO_CHECK }}
