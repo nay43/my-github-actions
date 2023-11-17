@@ -8,7 +8,7 @@ jobs:
   verify:
     name: ${{ vars.JOB_NAME}}
     runs-on: ubuntu-latest
-    if: ${{ vars.WF_EXEC == 'true' }}
+    if: ${{ vars.EXEC_WF == 'true' }}
     steps:
       - uses: actions/checkout@v4
-      - run: echo "The file to check is: ${{ vars.FILE_TO_CHECK }}"
+      - run: echo The file to check is: ${{ vars.FILE_TO_CHECK }}
