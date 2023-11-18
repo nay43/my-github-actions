@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-    #uses: ./.github/workflows/explicit-inputs.yml    # It works?
-    uses: nay43/my-github-actions/.github/workflows/explicit-inputs.yml@main
+    uses: ./.github/workflows/explicit-inputs.yml
     with:
       title: "Automated workflow failure issue for commit ${{ github.sha }}"
       body: "This issue was created automatically by GitHub Actions workflow ** {{ github.workflow }} **"
