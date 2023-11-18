@@ -7,6 +7,7 @@ jobs:
   use-workflow-call:
     runs-on: ubuntu-latest
     steps:
+      - uses: 'actions/checkout@v4'
       - uses: './.github/workflows/explicit-inputs.yml'
         with:
           title: "Automated workflow failure issue for commit ${{ github.sha }}"
