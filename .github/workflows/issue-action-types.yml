@@ -1,0 +1,10 @@
+name: Working with actions types
+
+on:
+  issues:
+
+jobs:
+  notify-for-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Something happened with an issue"
