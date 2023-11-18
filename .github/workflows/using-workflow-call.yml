@@ -1,0 +1,13 @@
+name: Workflow call
+
+on:
+  workflow_dispatch:
+
+jobs:
+  use-workflow-call:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: './.github/workflows/explicit-inputs.yml'
+        with:
+          title: "Automated workflow failure issue for commit ${{ github.sha }}"
+          body: "This issue was created automatically by GitHub Actions workflow ** {{ github.workflow }} **"
