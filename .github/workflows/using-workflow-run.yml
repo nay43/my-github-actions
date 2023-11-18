@@ -3,7 +3,7 @@ name: Workflow run
 on:
   workflow_run:
     workflows:
-      - " Simple Go Build"
+      - "CI"
     types:
       - completed
     branches:
