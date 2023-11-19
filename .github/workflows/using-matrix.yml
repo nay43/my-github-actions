@@ -5,6 +5,8 @@ on:
 
 jobs:
   create-new-issue:
+    permissions:
+      issues: write
     strategy:
       matrix:
         prod: [prod1, prod2]
