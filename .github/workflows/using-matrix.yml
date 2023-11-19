@@ -1,0 +1,15 @@
+name: Using matrix
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-new-issue:
+    strategy:
+      matrix:
+        prod: [prod1, prod2]
+        level: [dev, stage, prod]
+    uses: nay43/my-github-actions/.github/workflows/explicit-inputs.yml@main
+    with:
+      title: "${{ matrix.prod }} issue"
+      body: "Update for ${{ matrix.level}}"
