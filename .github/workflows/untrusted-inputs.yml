@@ -6,5 +6,7 @@ on:
 jobs:
   illegal-inputs:
     runs-on: ubuntu-latest
+    env:
+      DATA_VALUE: ${{ secrets.SIDEMO_SECRET }}
     steps:
-      - run: echo ${{ secrets.SIDEMO_SECRET }}
+      - run: echo $DATA_VALUE
