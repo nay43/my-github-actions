@@ -1,0 +1,10 @@
+name: Illegal inputs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  illegal-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - echo "${{ secrets.SIDEMO_SECRET }}"
