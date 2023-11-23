@@ -16,3 +16,9 @@ jobs:
           echo "::warning::This is a warning message"
           echo "::notice::This is a notice message"
           echo "::error::This is an error message"
+      - run: |
+          echo "::group::Extended info"
+          echo "Info line 1"
+          echo "Info line 2"
+          echo "Info line 3"
+          echo "::endgroup::"
