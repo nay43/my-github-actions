@@ -5,6 +5,7 @@ on:
 
 env:
   MYVAR: ${{ secrets.ACTIONS_STEP_DEBUG }}
+  USER_ID: "User 1234"
 
 jobs:
   test-job:
@@ -22,3 +23,6 @@ jobs:
           echo "Info line 2"
           echo "Info line 3"
           echo "::endgroup::"
+      - run: |
+          echo "::addmask::$USER_ID"
+          echo "USER_ID is $USER_ID"
