@@ -1,0 +1,14 @@
+name: Using custom debug messages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+    - echo "Is ACTIONS_STEP_DEBUG enabled? ${{ secrets.ACTIONS_STEP_DEBUG }}"
+    - echo "::debug::This is a debug message"
+    - echo "::warning::This is a warning message"
+    - echo "::notice::This is a notice message"
+    - echo "::error::This is an error message"
