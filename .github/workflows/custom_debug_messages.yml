@@ -3,10 +3,11 @@ name: Using custom debug messages
 on:
   workflow_dispatch:
 
+env:
+  MYVAR: ${{ secrets.ACTIONS_STEP_DEBUG }}
+
 jobs:
   test-job:
     runs-on: ubuntu-latest
-    env:
-      MYVAR: ${{ secrets.ACTIONS_STEP_DEBUG }}
     steps:
-      - echo $MYVAR
+      - echo "$MYVAR"
