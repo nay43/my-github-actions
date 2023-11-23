@@ -9,8 +9,8 @@ jobs:
     env:
       MYVAR: ${{ secrets.ACTIONS_STEP_DEBUG }}
     steps:
-      - echo "Is ACTIONS_STEP_DEBUG enabled? $MYVAR"
-      - echo "::debug::This is a debug message"
-      - echo "::warning::This is a warning message"
-      - echo "::notice::This is a notice message"
-      - echo "::error::This is an error message"
+      - echo Is ACTIONS_STEP_DEBUG enabled? $MYVAR
+      - echo ::debug::This is a debug message
+      - echo ::warning::This is a warning message
+      - echo ::notice::This is a notice message
+      - echo ::error::This is an error message
