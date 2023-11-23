@@ -10,4 +10,5 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "My var is: " $MYVAR
+      - run: |
+          echo "My var is:  $MYVAR"
