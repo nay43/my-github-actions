@@ -1,0 +1,26 @@
+name: Creating a Customized Job Summary
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Do build phase 1..."
+          echo "Build phase 1 done :star:" >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo "Do build phase 2 with input..."
+          echo "Build phase 2 done :exclamation:" >> $GITHUB_STEP_SUMMARY
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Do testing..."
+      - name: Add testing summary
+        run: |
+        echo "Testing summary follows:" >> $GITHUB_STEP_SUMMARY
+        echo " | Test | Result | " >> $GITHUB_STEP_SUMMARY
+        echo " | ----:| ------:| " >> $GITHUB_STEP_SUMMARY
+        echo " | 1 | :white_check_mark: | " >> $GITHUB_STEP_SUMMARY
+        echo " | 2 | :no_entry_sign: | " >> $GITHUB_STEP_SUMMARY
