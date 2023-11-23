@@ -19,8 +19,8 @@ jobs:
       - run: echo "Do testing..."
       - name: Add testing summary
         run: |
-        echo "Testing summary follows:" >> $GITHUB_STEP_SUMMARY
-        echo " | Test | Result | " >> $GITHUB_STEP_SUMMARY
-        echo " | ----:| ------:| " >> $GITHUB_STEP_SUMMARY
-        echo " | 1 | :white_check_mark: | " >> $GITHUB_STEP_SUMMARY
-        echo " | 2 | :no_entry_sign: | " >> $GITHUB_STEP_SUMMARY
+          echo "Testing summary follows:" >> $GITHUB_STEP_SUMMARY
+          echo " | Test | Result | " >> $GITHUB_STEP_SUMMARY
+          echo " | ----:| ------:| " >> $GITHUB_STEP_SUMMARY
+          echo " | 1 | :white_check_mark: | " >> $GITHUB_STEP_SUMMARY
+          echo " | 2 | :no_entry_sign: | " >> $GITHUB_STEP_SUMMARY
