@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: report-count
-        uses: nay43/my-github-actions@v1
+        uses: nay43/my-composite-action@v1
         with:
           arguments-to-count: ${{ github.event.inputs.myValues }}
       - shell: bash
