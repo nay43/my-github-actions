@@ -1,4 +1,4 @@
-name: Composite Action
+name: Local Action
 
 on:
   workflow_dispatch:
