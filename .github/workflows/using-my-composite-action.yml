@@ -11,4 +11,7 @@ jobs:
         uses: nay43/my-composite-action@v1
         with:
           arguments-to-count: 'Hello Hello World'
-      - run: echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
+      - shell: bash
+        run: |
+          echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
+
