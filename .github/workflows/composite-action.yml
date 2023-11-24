@@ -2,21 +2,16 @@ name: Composite Action
 
 on:
   workflow_dispatch:
-    inputs:
-      myValues:
-        description: 'Input Values'
-        required: true
 
 jobs:
-  count-args:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
       - uses: actions/checkout@v4
-      - id: report-count
-        uses: nay43/my-github-actions@v1
+      - id: foo
+        uses: nay43/hello-world-composite-action@v1
         with:
-          arguments-to-count: ${{ github.event.inputs.myValues }}
-      - shell: bash
-        run: |
-          echo "Args to count: ${{ github.event.inputs.myValues }}"
-          echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
