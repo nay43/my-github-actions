@@ -12,6 +12,4 @@ jobs:
         with:
           arguments-to-count: 'Hello Hello World'
       - shell: bash
-        run: |
-          echo "Args to count: $MYARGS"
-          echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
+        run: echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
