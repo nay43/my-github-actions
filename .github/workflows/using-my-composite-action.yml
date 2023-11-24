@@ -2,20 +2,15 @@ name: My Composite Action
 
 on:
   workflow_dispatch:
-    inputs:
-      myValues:
-        description: 'Input Values'
 
 jobs:
   count-args:
     runs-on: ubuntu-latest
-    env:
-      MYARGS: ${{ github.event.inputs.myValues }}
     steps:
       - id: report-count
         uses: nay43/my-composite-action@v1
         with:
-          arguments-to-count: $MYARGS
+          arguments-to-count: 'Hello Hello World'
       - shell: bash
         run: |
           echo "Args to count: $MYARGS"
