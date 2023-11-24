@@ -12,4 +12,3 @@ jobs:
         with:
           arguments-to-count: 'Hello Hello World'
       - run: echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
-        shell: bash
