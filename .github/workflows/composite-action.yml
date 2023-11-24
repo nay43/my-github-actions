@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: report-count
-        uses: nay43/my-github-actions@main
+        uses: nay43/my-github-actions@v1
         with:
           arguments-to-count: ${{ github.event.inputs.myValues }}
       - shell: bash
