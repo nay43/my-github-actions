@@ -5,17 +5,18 @@ on:
     inputs:
       myValues:
         description: 'Input Values'
-        required: true
 
 jobs:
   count-args:
     runs-on: ubuntu-latest
+    env:
+      MYARGS: ${{ github.event.inputs.myValues }}
     steps:
       - id: report-count
         uses: nay43/my-composite-action@v1
         with:
-          arguments-to-count: ${{ github.event.inputs.myValues }}
+          arguments-to-count: $MYARGS
       - shell: bash
         run: |
-          echo "Args to count: ${{ github.event.inputs.myValues }}"
+          echo "Args to count: $MYARGS"
           echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
