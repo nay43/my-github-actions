@@ -1,0 +1,21 @@
+name: My Composite Action
+
+on:
+  workflow_dispatch:
+    inputs:
+      myValues:
+        description: 'Input Values'
+        required: true
+
+jobs:
+  count-args:
+    runs-on: ubuntu-latest
+    steps:
+      - id: report-count
+        uses: nay43/my-github-actions@v1
+        with:
+          arguments-to-count: ${{ github.event.inputs.myValues }}
+      - shell: bash
+        run: |
+          echo "Args to count: ${{ github.event.inputs.myValues }}"
+          echo "Total count: ${{ steps.report-count.outputs.arg-count }}"
