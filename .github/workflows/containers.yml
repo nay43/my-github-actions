@@ -13,8 +13,29 @@ jobs:
 
   test-job2:
     runs-on: ubuntu-latest
-    container: golang:1.20.0-alpine
+    container:
+      image: golang:1.20.0-alpine
     steps:
-    - uses: actions/checkout@v3
-    - name: get info
-      run: go version
+      - uses: actions/checkout@v3
+      - name: get info
+        run: go version
+
+  test-job3:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: P@ssword123
+          MYSQL_DATABASE: mydb
+        ports:
+          - 3306:3306
+        options:
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retires=3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Verify db exists
+        run: mysql --host 127.0.0.1 --port 3306 -uroot -pP@ssword123 -e "SHOW DATABASES LIKE 'mydb'"
