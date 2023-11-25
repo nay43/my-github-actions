@@ -10,3 +10,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: using containers
         run: sudo docker run --rm -v "$PWD":/workdir -w /workdir centos:latest ls -laR
+
+  test-job2:
+    runs-on: ubuntu-latest
+    container: golang:1.20.0-alpine
+    steps:
+    - uses: actions/checkout@v3
+    - name: get info
+      run: go version
